@@ -5,15 +5,17 @@ interface AppProps {
   extraText?: string;
 }
 
+interface Address {
+  street: string,
+  number: number,
+  zip: string
+}
+
 interface User {
   name: string,
   age: number,
   country: string,
-  address: {
-    street: string,
-    number: number,
-    zip: string
-  },
+  address: Address,
   admin: boolean
 }
 
