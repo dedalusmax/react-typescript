@@ -6,6 +6,6 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <App headerText="This is it" extraText="extra text right on" />
+    <App />
   </React.StrictMode>
 );
