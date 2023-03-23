@@ -1,22 +1,9 @@
 import React, { useState } from 'react';
+import { User } from './Models/interfaces';
 
 interface AppProps {
   headerText: string;
   extraText?: string;
-}
-
-interface Address {
-  street: string,
-  number: number,
-  zip: string
-}
-
-interface User {
-  name: string,
-  age: number,
-  country: string,
-  address: Address,
-  admin: boolean
 }
 
 export default function App({headerText, extraText = 'default text'} : AppProps) {
