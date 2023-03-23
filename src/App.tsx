@@ -1,10 +1,15 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+interface AppProps {
+  headerText: string;
+  extraText?: string;
 }
 
-export default App;
+export default function App({headerText, extraText = 'default text'} : AppProps) {
+  return (
+    <>
+      <h1>{headerText}</h1>
+      <p>{extraText}</p>
+    </>
+  );
+}
