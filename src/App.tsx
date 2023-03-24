@@ -1,29 +1,15 @@
-import { useState } from 'react';
-
-type CheckoutStep = "Details" | "Shipping" | "Payment";
+import { DataGrid } from './Components/DataGrid';
 
 export default function App() {
-  const [checkoutStep, setCheckoutStep] = useState<CheckoutStep>("Details");
+  const users = [
+    { id: 1, name: "John", age: 55 },
+    { id: 2, name: "Mitchel", age: 23 },
+    { id: 3, name: "Mike", age: 50 }
+  ];
 
   return (
     <>
-      {checkoutStep === 'Details' && (
-        <>
-          <h1>Details</h1>
-          <button type='button' onClick={() => setCheckoutStep("Shipping")}>Next</button>
-        </>
-      )}
-      {checkoutStep === 'Shipping' && (
-        <>
-          <h1>Shipping</h1>
-          <button type='button' onClick={() => setCheckoutStep("Payment")}>Next</button>
-        </>
-      )}
-      {checkoutStep === 'Payment' && (
-        <>
-          <h1>Payment</h1>
-        </>
-      )}
+      <DataGrid items={users} />
     </>
   );
 }
