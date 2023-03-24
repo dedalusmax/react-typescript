@@ -1,4 +1,10 @@
-export function DataGrid({items}: any) {
+import { User } from "../App";
+
+interface DataGridProps {
+    items: User[];
+}
+
+export function DataGrid({items}: DataGridProps) {
     return (
         <>
             <ul>
