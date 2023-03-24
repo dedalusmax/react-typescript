@@ -1,10 +1,8 @@
-import { User } from "../App";
-
-interface DataGridProps {
-    items: User[];
+interface DataGridProps<T> {
+    items: T[];
 }
 
-export function DataGrid({items}: DataGridProps) {
+export function DataGrid<T>({items}: DataGridProps<T>) {
     return (
         <>
             <ul>
