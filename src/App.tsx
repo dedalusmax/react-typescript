@@ -1,15 +1,27 @@
-import { useContext } from 'react';
-import { InputValueContext } from './InputValueContext';
+import { useState } from 'react';
 
 export default function App() {
-  const { state, dispatch } = useContext(InputValueContext);
+  const [checkoutStep, setCheckoutStep] = useState("Details");
 
   return (
     <>
-      <p>Value: {state.inputValue}</p>
-      <button onClick={() => dispatch({ type: "SET_INPUT_VALUE_TO_100"})}>
-        SET VALUE TO 100
-      </button>
+      {checkoutStep === 'Details' && (
+        <>
+          <h1>Details</h1>
+          <button type='button' onClick={() => setCheckoutStep("Shipping")}>Next</button>
+        </>
+      )}
+      {checkoutStep === 'Shipping' && (
+        <>
+          <h1>Shipping</h1>
+          <button type='button' onClick={() => setCheckoutStep("Payment")}>Next</button>
+        </>
+      )}
+      {checkoutStep === 'Payment' && (
+        <>
+          <h1>Payment</h1>
+        </>
+      )}
     </>
   );
 }
